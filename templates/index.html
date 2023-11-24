@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Page</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      border-radius: 20px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    a {
+      color: pink;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .results {
+      margin-top: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .result-link {
+      display: inline-block;
+      margin-bottom: 10px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .result-link a {
+      color: white;
+      background-color: green;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 5px;
+      border-radius: 7px;
+    }
+    .result-link {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      text-align: center;
+      padding: 5px;
+    }    
+
+    .result-link a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <h1> Find LeetCode Questions</h1>
+  <div class="form">
+    <form method="POST">
+      {{ form.hidden_tag() }} 
+      {{ form.search.label }} 
+      {{ form.search() }} 
+      {{ form.submit() }}
+    </form>
+  </div>
+  <div class="results">
+    {% for result in results %}
+      <div class="result">
+        <div class="result-link">
+          <a href="{{ result['Question Link'] }}" target="_blank">{{ result['Question Link'] }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
