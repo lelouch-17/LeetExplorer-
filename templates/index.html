@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Page</title>
-  <style>
+  <title>Search LeetCode Questions</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Favicon -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"> <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+  <!-- <style>
+
     body {
-      background-color: #111;
-      color: #fff;
+      background-color: #282c34;
+      background-image: url('../static/bgImage2.jpg');
+      background-size: cover;
+      color: #abb2bf;
+      font-family: 'Roboto', sans-serif;
     }
 
     h1 {
       font-size: 36px;
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 30px;
     }
 
     .form {
@@ -24,40 +30,46 @@
       display: inline-block;
     }
 
-    input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 300px;
-      border-radius: 20px;
-    }
-    
-    input[type="submit"] {
+    input[type="text"], input[type="submit"] {
       padding: 10px 20px;
       font-size: 16px;
-      background-color: green;
-      color: #fff;
       border: none;
-      cursor: pointer;
       border-radius: 20px;
+      margin: 5px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      background-color: #3c4049;
+      color: #dcdcdc;
+    }
+
+    input[type="submit"] {
+      background-color: #61afef;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #528bca;
     }
 
     a {
-      color: pink;
+      color: #61afef;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
-    
+
     .results {
-      margin-top: 30px;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin: 30px 20px;
     }
 
     .result-link {
-      display: inline-block;
+      display: flex;
+      justify-content: center;
       margin-bottom: 10px;
       text-align: center;
       padding: 5px;
@@ -65,28 +77,185 @@
 
     .result-link a {
       color: white;
-      background-color: green;
+      background-color: #56b6c2;
       text-decoration: none;
       border: 1px solid white;
-      padding: 5px;
+      padding: 8px 12px;
       border-radius: 7px;
+      transition: background-color 0.3s;
     }
+
+    .result-link a:hover {
+      background-color: #3c909b;
+      text-decoration: underline;
+    }
+  </style> -->
+
+  <style>
+    body {
+      background-color: #282c34;
+      background-image: url('../static/bgImage4.jpg');
+      background-size:auto;
+      color: #abb2bf;
+      font-family: 'Roboto', sans-serif;
+      animation: backgroundShift 20s infinite alternate;
+      /* filter: blur(5px); */
+  
+  /* Ensure the content itself is not blurred */
+  /* overflow: hidden; */
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0 0; }
+      50% { background-position: 10px 10px; }
+      100% { background-position: 0 0; }
+    }
+
+    h1 {
+      font-size: 70px;
+      text-align: center;
+      margin-top: 30px;
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      /* animation: typewriter 4s steps(40) 1s 1 normal both; */
+    }
+
+      h3{
+        /* font-size: 36px; */
+      text-align: center;
+      margin-top: 8px;
+      overflow: hidden;
+      border-right: .15em solid orange;
+      /* white-space: nowrap; */
+      font-family:  "sans-serif";
+      }
+    @keyframes typewriter {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    .form {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    form {
+      display: inline-block;
+    }
+
+    input[type="text"], input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      margin: 5px;
+      transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      background-color: #3c4049;
+      color: #dcdcdc;
+    }
+
+    input[type="submit"] {
+      background-color: #61afef;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #528bca;
+      box-shadow: 0px 0px 10px #528bca;
+      transform: scale(1.05);
+    }
+
+    input[type="submit"]:active {
+      transform: scale(0.95);
+    }
+
+    .imageee:hover {
+      transform: rotate(360deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    a {
+      color: #61afef;
+      text-decoration: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .results {
+      margin: 30px 20px;
+    }
+
     .result-link {
       display: flex;
       justify-content: center;
       margin-bottom: 10px;
       text-align: center;
       padding: 5px;
-    }    
-
-    .result-link a:hover {
-      text-decoration: underline;
     }
 
+    .result-link a {
+      color: white;
+      background-color: #56b6c2;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 8px 12px;
+      border-radius: 7px;
+      position: relative;
+      overflow: hidden;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .result-link a:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #61afef;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+    }
+
+    .result-link a:hover:after {
+      transform: translateX(0%);
+    }
+
+    .result {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .result:hover {
+      transform: scale(1.05);
+    }
+
+    .result.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
+
 </head>
 <body>
-  <h1> Find LeetCode Questions</h1>
+  <h1><img src="../static/leetcode.png" height="70px" class="imageee"/> LeetExplorer</h1>
+  <h3><i>Find your targeted LeetCode Problems here at just one click</i></h3>
   <div class="form">
     <form method="POST">
       {{ form.hidden_tag() }} 
@@ -100,9 +269,23 @@
       <div class="result">
         <div class="result-link">
           <a href="{{ result['Question Link'] }}" target="_blank">{{ result['Question Link'] }}</a>
+           <!-- <a href="https://leetcode.com/problems/frog-position-after-t-seconds" target="_blank">https://leetcode.com/problems/frog-position-after-t-seconds</a> -->
         </div>
       </div>
+
+
     {% endfor %}
   </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const results = document.querySelectorAll('.result');
+      results.forEach((result, index) => {
+        setTimeout(() => {
+          result.classList.add('visible');
+        }, index * 200); // Delay increases for each result
+      });
+    });
+  </script>
 </body>
 </html>

@@ -150,3 +150,7 @@ def home():
         q_terms = [term.lower() for term in query.strip().split()]
         results = calc_docs_sorted_order(q_terms)[:20:]
     return render_template('index.html', form=form, results=results)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    # app.secret_key = 'lelouch'
